@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('book', function (Blueprint $table) {
-            
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string("judul");
-            $table->unsignedBigInteger("fk_publisher");
-            $table->foreign("fk_publisher")->references("id")->on("publishers");
-            $table->unsignedBigInteger("fk_author");
-            $table->foreign("fk_author")->references("id")->on("authors");
+            $table->string("email");
+            $table->string("password");
+            $table->string("token", 40)->nullable();            
             $table->timestamps();
         });
     }

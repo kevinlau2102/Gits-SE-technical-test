@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\author;
+use App\Models\user;
 
 class AuthorController extends Controller
 {
@@ -22,7 +24,7 @@ class AuthorController extends Controller
         $user = user::where("token", $validateData["token"])->first();
         if($user != null){
             $authors->save();
-            return response()->json(["Status: " => "Insert Data Sukses"]);
+            return response()->json(["Status: " => "Insert Data Success"]);
         } else{
             return response()->json(["Status: " => "Insert Data Failed"]);
 
@@ -40,7 +42,7 @@ class AuthorController extends Controller
         $user = user::where("token", $validateData["token"])->first();
         if($user != null){
             $authors->update();
-            return response()->json(["Status: " => "Update Data Sukses"]);
+            return response()->json(["Status: " => "Update Data Success"]);
         } else{
             return response()->json(["Status: " => "Update Data Failed"]);
 
@@ -51,6 +53,6 @@ class AuthorController extends Controller
     {
         $authors = author::where("id", $request->autId)->first();
         $authors->delete();
-        return response()->json(["Status: " => "Delete Data Sukses"]);
+        return response()->json(["Status: " => "Delete Data Success"]);
     }
 }

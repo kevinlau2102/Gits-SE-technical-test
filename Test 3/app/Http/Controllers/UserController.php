@@ -15,7 +15,7 @@ class UserController extends Controller
         $modelUser = user::where("email", $email)->where("password", md5($pass))->first();
         $token = "";
         if($modelUser != null){
-            $token = Str::random(40);
+            $token = Str::random(25);
             $modelUser->token = $token;
             $modelUser->update();
 

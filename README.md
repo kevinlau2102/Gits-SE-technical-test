@@ -1,5 +1,29 @@
-# Gits Software Engineer Technical Test
-
 Link Postman:
 
-[https://drive.google.com/file/d/1HfLSmUNpdaiaosRAdHxZL9aTrcGvFxy3/view?usp=sharing](https://drive.google.com/file/d/14Fe--ffijc_-Cr8tWiR-Xvtt859Fhrbw/view?usp=sharing)
+https://elements.getpostman.com/redirect?entityId=25822863-666d044f-bfbb-449b-9f91-56def84cc290&entityType=collection
+
+### Installation
+```bash
+npm install
+```
+
+### Run the app
+
+```bash
+npm install -g nodemon sequelize-cli
+```
+
+```bash
+# Create Database
+sequelize db:create
+
+# Migrate Database
+sequelize db:migrate
+
+# Seeder *Optional
+sequelize db:seed:all
+
+# Run the app
+npm run dev
+```
+
